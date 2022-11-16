@@ -39,7 +39,7 @@ pipeline {
                 echo "--------------------- Running Docker Image ---------------------"
                 script {
                     dockerImage.inside() {
-                        sh 'robot --variable MIGRATION_PASS:$MIG_PSW --variable STAGING_PASS:$STAGING_PSW --variable JENKINS_PASS:$JENKINS_PSW tasks.robot'
+                        sh 'robot --report NONE --variable MIGRATION_PASS:$MIG_PSW --variable STAGING_PASS:$STAGING_PSW --variable JENKINS_PASS:$JENKINS_PSW tasks.robot'
                     }
                 }
             }
